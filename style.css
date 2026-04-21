@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Poppins;
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:linear-gradient(135deg,#4f46e5,#9333ea,#ec4899);
+    background-size:300% 300%;
+    animation:bgMove 10s ease infinite;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+
+    padding:14px 18px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+}
+
+.brand{
+    font-size:20px;
+    font-weight:800;
+
+    padding:8px 14px;
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#fff,#e0e7ff);
+    color:#4f46e5;
+
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.header button{
+    padding:10px 14px;
+    margin:5px;
+
+    border:none;
+    border-radius:12px;
+
+    background:white;
+    color:#4f46e5;
+
+    font-weight:600;
+    cursor:pointer;
+
+    transition:0.25s ease;
+
+    min-width:90px;
+}
+
+.header button:hover{
+    transform:translateY(-3px);
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    color:white;
+
+    padding:70px 20px 30px;
+}
+
+.hero h1{
+    font-size:40px;
+    font-weight:900;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:15px;
+    opacity:0.9;
+}
+
+/* ================= LOGIN ================= */
+
+.center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:15px;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+
+    background:white;
+    padding:25px;
+
+    border-radius:20px;
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+    animation:pop 0.4s ease;
+}
+
+.card h2, .card h3{
+    color:#4f46e5;
+    margin-bottom:10px;
+}
+
+.card input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+
+    border-radius:12px;
+    border:1px solid #ddd;
+
+    outline:none;
+    font-size:14px;
+}
+
+.card input:focus{
+    border-color:#4f46e5;
+}
+
+.card button{
+    width:100%;
+    padding:14px;
+
+    border:none;
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#4f46e5,#9333ea);
+    color:white;
+
+    font-weight:600;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.card button:hover{
+    transform:scale(1.03);
+}
+
+/* ================= PRODUCT ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.product{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+    transition:0.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.product h3{
+    margin:10px;
+}
+
+.product p{
+    margin:0 10px;
+    color:#4f46e5;
+    font-weight:700;
+}
+
+.product small{
+    margin:0 10px;
+    display:block;
+    opacity:0.8;
+}
+
+.product button{
+    width:90%;
+    margin:10px;
+
+    padding:10px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#4f46e5;
+    color:white;
+
+    cursor:pointer;
+}
+
+/* ================= CHAT (IMPROVED) ================= */
+
+.chat-container{
+    max-width:600px;
+    margin:20px auto;
+
+    background:white;
+    border-radius:18px;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    height:75vh;
+
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+.chat-header{
+    background:linear-gradient(135deg,#4f46e5,#9333ea);
+    color:white;
+
+    padding:14px;
+    font-weight:700;
+    text-align:center;
+}
+
+.chat-box{
+    flex:1;
+    padding:12px;
+
+    overflow-y:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    background:#f5f6ff;
+}
+
+.msg{
+    max-width:75%;
+    padding:10px 14px;
+
+    border-radius:15px;
+    font-size:14px;
+
+    word-wrap:break-word;
+}
+
+.msg.me{
+    align-self:flex-end;
+    background:#4f46e5;
+    color:white;
+
+    border-bottom-right-radius:4px;
+}
+
+.msg.them{
+    align-self:flex-start;
+    background:white;
+
+    border-bottom-left-radius:4px;
+
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.chat-input{
+    display:flex;
+    padding:10px;
+    gap:10px;
+
+    border-top:1px solid #ddd;
+}
+
+.chat-input input{
+    flex:1;
+    padding:10px;
+
+    border-radius:10px;
+    border:1px solid #ccc;
+
+    outline:none;
+}
+
+.chat-input button{
+    padding:10px 15px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#4f46e5;
+    color:white;
+
+    cursor:pointer;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:white;
+    padding:12px 18px;
+
+    border-radius:12px;
+    font-weight:600;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ANIMATION */
+@keyframes pop{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+}
+
+/* ================= MOBILE (CP FRIENDLY) ================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:24px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .header{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .header button{
+        width:45%;
+        font-size:13px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        width:95%;
+        padding:18px;
+    }
+
+    .chat-container{
+        height:85vh;
+        margin:10px;
+    }
+}
